@@ -1,0 +1,22 @@
+name: caloflow_ad
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+      - torch
+      - torchvision
+      - torchaudio
+      - nflows
+      - h5py
+      - numpy
+      - scipy
+      - pandas
+      - matplotlib
+      - scikit-learn
+      - tqdm
+      - pyyaml
+      - pytest

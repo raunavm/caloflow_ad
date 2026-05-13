@@ -1,0 +1,118 @@
+# Phase 1 CaloFlow training job for NRP/Nautilus (cms-ml namespace).
+#
+# Pattern: public NVIDIA PyTorch base image + git-clone + pip-install + run upstream
+# caloflow/run.py. No custom image needed.
+#
+# Before applying:
+#   1. Push this repo to a public GitHub repo and update REPO_URL below.
+#   2. Confirm dataset has been downloaded to /data/raunav/caloflow_ad/data/ad_504/
+#      on the calochallenge-vol PVC (run cluster/download_data.job.yaml first).
+#   3. Verify GPU availability and PVC space:
+#        kubectl get nodes -l nvidia.com/gpu.product
+#        kubectl exec <some-raunav-pod> -- df -h /data
+#
+# Per the safety memory: hand the kubectl command back to the user for explicit
+# approval before applying.
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: raunav-caloflow-train-seed001
+  namespace: cms-ml
+  labels:
+    user: raunav
+    project: caloflow_ad
+    phase: "1"
+spec:
+  backoffLimit: 1
+  template:
+    metadata:
+      labels:
+        user: raunav
+        project: caloflow_ad
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: trainer
+          image: nvcr.io/nvidia/pytorch:24.01-py3
+          imagePullPolicy: IfNotPresent
+          workingDir: /workspace
+          command: ["/bin/bash", "-lc"]
+          args:
+            - |
+              set -euo pipefail
+              echo "[setup] node=$(hostname)  gpu=$(nvidia-smi -L)  date=$(date -u)"
+
+              # --- code ---
+              REPO_URL="${REPO_URL:-https://github.com/raunavm/caloflow_ad.git}"
+              REPO_REF="${REPO_REF:-main}"
+              git clone --depth=1 --branch "$REPO_REF" "$REPO_URL" code
+              cd code
+
+              # --- upstream training repo (caloflow), partial-clone to skip bundled HDFs ---
+              git clone --filter=blob:limit=1m --depth=1 \
+                https://gitlab.com/claudius-krause/caloflow.git external/caloflow
+
+              # --- minimal deps on top of nvcr pytorch:24.01-py3 ---
+              # NVIDIA image already has torch, numpy, pandas, h5py, matplotlib.
+              # Only nflows is missing for caloflow/run.py.
+              pip install --no-cache-dir nflows==0.14
+
+              # --- sanity ---
+              python -c "import torch, nflows; print('torch', torch.__version__, 'cuda', torch.cuda.is_available(), 'nflows ok')"
+              df -h /data
+
+              # --- run training (upstream caloflow run.py) ---
+              # gamma_1.hdf5 for training (70k/30k internal train/val per AD paper).
+              # NO --student_mode (we need likelihoods, not IAF fast-gen).
+              mkdir -p /data/raunav/caloflow_ad/results/seed_001
+              cd external/caloflow
+              python run.py -p=gamma \
+                --train \
+                --data_dir=/data/raunav/caloflow_ad/data/ad_504/ \
+                --output_dir=/data/raunav/caloflow_ad/results/seed_001/
+
+              echo "[done] $(date -u)"
+          env:
+            - name: REPO_URL
+              value: "https://github.com/raunavm/caloflow_ad.git"  # TODO: fill in
+            - name: REPO_REF
+              value: "main"
+            - name: PYTHONUNBUFFERED
+              value: "1"
+            - name: NVIDIA_VISIBLE_DEVICES
+              value: "all"
+          resources:
+            requests:
+              cpu: "4"
+              memory: "16Gi"
+              nvidia.com/gpu: "1"
+            limits:
+              cpu: "8"
+              memory: "32Gi"
+              nvidia.com/gpu: "1"
+          volumeMounts:
+            - name: project-pvc
+              mountPath: /data
+      volumes:
+        - name: project-pvc
+          persistentVolumeClaim:
+            claimName: calochallenge-vol
+      # bf16-capable GPU families per the safety memory
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: nvidia.com/gpu.product
+                    operator: In
+                    values:
+                      - NVIDIA-A100-SXM4-80GB
+                      - NVIDIA-A100-SXM4-40GB
+                      - NVIDIA-A100-PCIE-40GB
+                      - NVIDIA-A40
+                      - NVIDIA-RTX-A6000
+                      - NVIDIA-GeForce-RTX-4090
+                      - NVIDIA-L40
+                      - NVIDIA-L40S
+                      - NVIDIA-L4

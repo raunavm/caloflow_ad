@@ -1,0 +1,19 @@
+# Project PVC for the CaloChallenge / CaloFlow-AD work.
+# Apply once:  kubectl apply -f cluster/pvc.yaml
+# This is a one-time creation. After this, all training/eval jobs mount it.
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: calochallenge-vol
+  namespace: cms-ml
+  labels:
+    user: raunav
+    project: caloflow_ad
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 100Gi
+  storageClassName: rook-cephfs
