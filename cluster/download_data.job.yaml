@@ -1,8 +1,8 @@
-# One-shot job to download the Zenodo 10393540 dataset onto the calochallenge-vol PVC.
+# One-shot job to download the Zenodo 10393540 dataset onto the caloflow-ad-vol PVC.
 # Run this once before train_caloflow.job.yaml.
 #
 # Per the safety memory:
-#   - Writes only to /data/raunav/calochallenge/data/ad_504/
+#   - Writes only to /data/raunav/caloflow_ad/data/ad_504/
 #   - Will refuse if PVC is >85% full (check beforehand)
 #   - Hand the kubectl command to the user for explicit approval before applying.
 
@@ -23,6 +23,13 @@ spec:
         project: caloflow_ad
     spec:
       restartPolicy: Never
+      # First-touch on a fresh PVC: /data is root-owned, so the downloader must
+      # run as root to create /data/raunav/. After this Job, subsequent pods can
+      # run unprivileged because /data/raunav/caloflow_ad/ exists and is writable.
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+        fsGroup: 0
       containers:
         - name: downloader
           image: curlimages/curl:8.10.1
@@ -54,16 +61,17 @@ spec:
 
               echo "[done] $(ls -lh)"
           resources:
+            # Namespace policy requires limit/request ratio <= 1.2
             requests:
               cpu: "1"
               memory: "1Gi"
             limits:
-              cpu: "2"
-              memory: "2Gi"
+              cpu: "1"
+              memory: "1Gi"
           volumeMounts:
             - name: project-pvc
               mountPath: /data
       volumes:
         - name: project-pvc
           persistentVolumeClaim:
-            claimName: calochallenge-vol
+            claimName: caloflow-ad-vol

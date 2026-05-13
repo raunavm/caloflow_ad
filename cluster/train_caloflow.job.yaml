@@ -6,7 +6,7 @@
 # Before applying:
 #   1. Push this repo to a public GitHub repo and update REPO_URL below.
 #   2. Confirm dataset has been downloaded to /data/raunav/caloflow_ad/data/ad_504/
-#      on the calochallenge-vol PVC (run cluster/download_data.job.yaml first).
+#      on the caloflow-ad-vol PVC (run cluster/download_data.job.yaml first).
 #   3. Verify GPU availability and PVC space:
 #        kubectl get nodes -l nvidia.com/gpu.product
 #        kubectl exec <some-raunav-pod> -- df -h /data
@@ -83,13 +83,14 @@ spec:
             - name: NVIDIA_VISIBLE_DEVICES
               value: "all"
           resources:
+            # Namespace policy requires limit/request ratio <= 1.2
             requests:
               cpu: "4"
               memory: "16Gi"
               nvidia.com/gpu: "1"
             limits:
-              cpu: "8"
-              memory: "32Gi"
+              cpu: "4"
+              memory: "16Gi"
               nvidia.com/gpu: "1"
           volumeMounts:
             - name: project-pvc
@@ -97,7 +98,7 @@ spec:
       volumes:
         - name: project-pvc
           persistentVolumeClaim:
-            claimName: calochallenge-vol
+            claimName: caloflow-ad-vol
       # bf16-capable GPU families per the safety memory
       affinity:
         nodeAffinity:

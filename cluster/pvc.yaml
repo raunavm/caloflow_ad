@@ -1,11 +1,11 @@
-# Project PVC for the CaloChallenge / CaloFlow-AD work.
+# Project PVC for the CaloFlow Anomaly Detection (caloflow_ad) work.
 # Apply once:  kubectl apply -f cluster/pvc.yaml
 # This is a one-time creation. After this, all training/eval jobs mount it.
 
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: calochallenge-vol
+  name: caloflow-ad-vol
   namespace: cms-ml
   labels:
     user: raunav
