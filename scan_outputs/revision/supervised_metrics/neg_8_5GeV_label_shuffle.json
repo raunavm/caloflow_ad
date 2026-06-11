@@ -1,0 +1,21 @@
+{
+  "AUC": 0.4884774775,
+  "sig_stem": "neg_8_5GeV",
+  "mode": "label_shuffle",
+  "n_bg_train": 80000,
+  "n_sig_train": 80000,
+  "n_bg_test": 20000,
+  "n_sig_test": 20000,
+  "epochs": 15,
+  "feature_dim": 504,
+  "eps_B@0.01": 0.01,
+  "eps_S@0.01": 0.0,
+  "SIC@0.01": 0.0,
+  "thr@0.01": 2.776868066787717,
+  "eps_B@0.001": 0.001,
+  "eps_S@0.001": 0.0,
+  "SIC@0.001": 0.0,
+  "thr@0.001": 3.5379193613529245,
+  "device": "cuda",
+  "created_at_utc": "2026-05-26T02:38:38Z"
+}

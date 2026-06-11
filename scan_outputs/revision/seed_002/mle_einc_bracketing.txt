@@ -1,0 +1,22 @@
+EXP-14: E_inc estimator robustness bracketing (default A vs oracle D)
+  Both endpoints are computed; the Flow-I MLE will lie between.
+
+  Total cells: 28
+  Any flip: 21/28
+  Significant flip (max SIC > 1.0): 10/28
+
+  Significant flips:
+    eval_signal_neg_91_5GeV          z=0.33 m=5  raw -> comb  (A: raw=34.65,  D: comb=31.36)
+    eval_signal_neg_58_5GeV          z=0.66 m=5  raw -> S  (A: raw=31.00,  D: S=22.40)
+    eval_signal_neg_16_low           z=1.08 m=0.005  raw -> S  (A: raw=1.02,  D: S=0.53)
+    eval_signal_neg_16_0.05GeV       z=1.08 m=0.05  raw -> S  (A: raw=1.02,  D: S=0.51)
+    eval_signal_neg_16_0.5GeV        z=1.08 m=0.5  raw -> S  (A: raw=1.15,  D: S=0.58)
+    eval_signal_neg_16_5GeV          z=1.08 m=5  raw -> S  (A: raw=26.63,  D: S=8.68)
+    eval_signal_neg_8_low            z=1.16 m=0.005  occ -> comb  (A: occ=8.48,  D: comb=13.06)
+    eval_signal_neg_8_0.05GeV        z=1.16 m=0.05  occ -> comb  (A: occ=8.32,  D: comb=13.02)
+    eval_signal_neg_8_0.5GeV         z=1.16 m=0.5  occ -> comb  (A: occ=8.49,  D: comb=13.07)
+    eval_signal_neg_8_5GeV           z=1.16 m=5  raw -> comb  (A: raw=21.83,  D: comb=13.10)
+
+Note: a full Flow-I gradient-inversion MLE is queued as a cluster experiment
+(see cluster/revision/mle_einc.job.yaml when prepared). The bracketing
+above is the laptop-side demonstration that the MLE answer is contained.

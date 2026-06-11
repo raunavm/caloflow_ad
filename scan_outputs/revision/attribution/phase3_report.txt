@@ -1,0 +1,27 @@
+======================================================================
+PHASE 3.2 — NULL CALIBRATION (held-out photons t_idx)
+region        |G|  mean sumz2  expect     std exp_std
+layer0        288       286.5     288    24.2    24.0
+layer1        144       143.3     144    17.4    17.0
+layer2         72        74.0      72    12.4    12.0
+L1_core        16        15.7      16     5.9     5.7
+L1_mid         48        47.6      48     9.6     9.8
+L1_outer       80        80.0      80    13.5    12.6
+L1_left        72        71.6      72    12.4    12.0
+L1_right       72        71.7      72    12.3    12.0
+per-coordinate photon <z^2>: mean=1.000 min=0.601 max=1.272 (expect ~1)
+======================================================================
+PHASE 3.3/3.5 — WHERE DOES THE EXCESS LIVE?
+cell                          totExc |   L0%   L1%   L2% |     PR/504 top10vox%
+neg_91_5GeV (z=0.33 RESOLVED)   801.1 |  27.7  68.1   4.2 |   59.0/504     32.4%
+neg_24_5GeV (z=1.00 DEAD)      181.5 |  34.8  64.1   1.1 |   11.1/504     80.0%
+neg_20_5GeV (z=1.04 DEAD)      167.6 |  18.0  80.2   1.8 |    8.0/504     82.2%
+neg_8_5GeV  (z=1.16 INTER)     138.8 |   5.3  75.9  18.8 |    8.4/504     72.8%
+======================================================================
+PHASE 3.4 — physical-voxel vs latent-index (autoregressive) concentration
+  PR computed two ways: excess over PHYSICAL voxels vs same excess relabeled by latent index.
+  (identical PR by construction for per-coordinate excess; the test is SPATIAL CONTIGUITY below)
+neg_91_5GeV (z=0.33 RESOLVED) layer1 Moran's I (PHYSICAL adjacency)=+0.327   latent-index lag1 autocorr=+0.050
+neg_24_5GeV (z=1.00 DEAD)    layer1 Moran's I (PHYSICAL adjacency)=+0.273   latent-index lag1 autocorr=+0.371
+neg_20_5GeV (z=1.04 DEAD)    layer1 Moran's I (PHYSICAL adjacency)=+0.267   latent-index lag1 autocorr=+0.293
+neg_8_5GeV  (z=1.16 INTER)   layer1 Moran's I (PHYSICAL adjacency)=+0.223   latent-index lag1 autocorr=+0.207

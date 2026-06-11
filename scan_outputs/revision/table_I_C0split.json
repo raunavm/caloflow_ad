@@ -1,0 +1,75 @@
+{
+  "alpha": 0.001,
+  "N_T": 30000,
+  "achievability": [
+    {
+      "channel": "raw",
+      "obs_le_alpha": 32,
+      "eps_B_achieved": 0.0010666666666666667,
+      "ratio_to_alpha": 1.0666666666666667
+    },
+    {
+      "channel": "L",
+      "obs_le_alpha": 30,
+      "eps_B_achieved": 0.001,
+      "ratio_to_alpha": 1.0
+    },
+    {
+      "channel": "S",
+      "obs_le_alpha": 31,
+      "eps_B_achieved": 0.0010333333333333334,
+      "ratio_to_alpha": 1.0333333333333334
+    },
+    {
+      "channel": "occ",
+      "obs_le_alpha": 4,
+      "eps_B_achieved": 0.00013333333333333334,
+      "ratio_to_alpha": 0.13333333333333333
+    },
+    {
+      "channel": "bonf",
+      "obs_le_alpha": 11,
+      "eps_B_achieved": 0.00036666666666666667,
+      "ratio_to_alpha": 0.36666666666666664
+    },
+    {
+      "channel": "comb",
+      "obs_le_alpha": 29,
+      "eps_B_achieved": 0.0009666666666666667,
+      "ratio_to_alpha": 0.9666666666666667
+    }
+  ],
+  "per_bin_floor_T_occ": [
+    {
+      "bin": 0,
+      "N_C1_b": 5864,
+      "floor": 0.00017050298380221653
+    },
+    {
+      "bin": 1,
+      "N_C1_b": 6034,
+      "floor": 0.00016570008285004143
+    },
+    {
+      "bin": 2,
+      "N_C1_b": 6018,
+      "floor": 0.0001661405549094534
+    },
+    {
+      "bin": 3,
+      "N_C1_b": 6033,
+      "floor": 0.00016572754391779913
+    },
+    {
+      "bin": 4,
+      "N_C1_b": 6051,
+      "floor": 0.00016523463317911433
+    }
+  ],
+  "split": {
+    "C0": 20000,
+    "C1": 30000,
+    "C2": 20000,
+    "T": 30000
+  }
+}

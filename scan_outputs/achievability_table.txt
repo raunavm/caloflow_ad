@@ -1,0 +1,40 @@
+========================================================================================================================
+Figure 2 v2 — achievability table   (3 benchmark cells × 5 channels × 2 nominal α)
+========================================================================================================================
+        regime    cell (z, m_χ)   channel    α nom   achieved ε_B       ε_S       SIC   floor?
+------------------------------------------------------------------------------------------------------------------------
+    morphology  z=0.33 m=5     T_raw    1e-02     1.0475e-02    0.9069     8.861       no
+    morphology  z=0.33 m=5     T_raw    1e-03     8.7500e-04    0.8518    28.798       no
+    morphology  z=0.33 m=5       T_I    1e-02     9.2250e-03    0.0104     0.108       no
+    morphology  z=0.33 m=5       T_I    1e-03     1.0250e-03    0.0012     0.039       no
+    morphology  z=0.33 m=5       T_S    1e-02     1.0375e-02    0.9052     8.887       no
+    morphology  z=0.33 m=5       T_S    1e-03     8.0000e-04    0.8500    30.051       no
+    morphology  z=0.33 m=5     T_occ    1e-02     1.9500e-03    0.0002     0.005      YES
+    morphology  z=0.33 m=5     T_occ    1e-03     1.2500e-04    0.0002     0.020      YES
+    morphology  z=0.33 m=5    p_comb    1e-02     9.5750e-03    0.9006     9.203       no
+    morphology  z=0.33 m=5    p_comb    1e-03     6.7500e-04    0.8148    31.362       no
+   combination  z=1.16 m=5     T_raw    1e-02     1.0475e-02    0.8976     8.770       no
+   combination  z=1.16 m=5     T_raw    1e-03     8.7500e-04    0.2096     7.086       no
+   combination  z=1.16 m=5       T_I    1e-02     9.2250e-03    0.3408     3.549       no
+   combination  z=1.16 m=5       T_I    1e-03     1.0250e-03    0.3297    10.297       no
+   combination  z=1.16 m=5       T_S    1e-02     1.0375e-02    0.8753     8.594       no
+   combination  z=1.16 m=5       T_S    1e-03     8.0000e-04    0.1497     5.291       no
+   combination  z=1.16 m=5     T_occ    1e-02     1.9500e-03    0.0955     2.164      YES
+   combination  z=1.16 m=5     T_occ    1e-03     1.2500e-04    0.0955     8.543      YES
+   combination  z=1.16 m=5    p_comb    1e-02     9.5750e-03    0.8438     8.623       no
+   combination  z=1.16 m=5    p_comb    1e-03     6.7500e-04    0.3395    13.069       no
+     occupancy  z=1.24 m=5     T_raw    1e-02     1.0475e-02    0.8576     8.379       no
+     occupancy  z=1.24 m=5     T_raw    1e-03     8.7500e-04    0.1681     5.683       no
+     occupancy  z=1.24 m=5       T_I    1e-02     9.2250e-03    0.8096     8.430       no
+     occupancy  z=1.24 m=5       T_I    1e-03     1.0250e-03    0.7113    22.219       no
+     occupancy  z=1.24 m=5       T_S    1e-02     1.0375e-02    0.7734     7.593       no
+     occupancy  z=1.24 m=5       T_S    1e-03     8.0000e-04    0.0927     3.277       no
+     occupancy  z=1.24 m=5     T_occ    1e-02     1.9500e-03    0.4563    10.333      YES
+     occupancy  z=1.24 m=5     T_occ    1e-03     1.2500e-04    0.4551    40.701      YES
+     occupancy  z=1.24 m=5    p_comb    1e-02     9.5750e-03    0.9009     9.206       no
+     occupancy  z=1.24 m=5    p_comb    1e-03     6.7500e-04    0.7769    29.904       no
+------------------------------------------------------------------------------------------------------------------------
+Floor column flags channels where nominal α < per-bin p-floor (discrete T_occ)
+or achieved ε_B < α/2 (conformal-resolution effect). At those points the SIC
+comparison MUST be made at matched achieved ε_B, not at nominal α.
+Per-bin floors:  C1 (raw/L/S/occ) = 1.250e-04,  C2 (comb) = 2.500e-04.

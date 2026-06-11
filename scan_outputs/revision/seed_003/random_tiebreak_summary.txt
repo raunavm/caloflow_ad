@@ -1,0 +1,17 @@
+Random vs conservative tie-breaking across 28 cells
+  raw label-flip rate (dominant channel): 10/28 = 35.7%
+
+  Decomposing the flips:
+    dead-zone (top SIC < 1.0, dominant channel is noise):   10/28
+    tie-noise (top - runner-up < 1.0, swap is statistical):  0/28
+    SIGNIFICANT (real change in mechanism story):              0/28
+
+  No significant flips outside dead-zone or tie noise.
+
+Interpretation:
+  Random tie-breaking removes T_occ's discrete-floor effect: under the
+  conservative >= convention many T_occ ties stack at the high-rank end,
+  which sharpens the achievable eps_B downward. Randomization spreads
+  these uniformly, so T_occ operates closer to its nominal eps_B = alpha.
+  The MATCHED-eps_B comparison (EXP-6) is unaffected; only the SIC AT
+  nominal alpha = 1e-3 shifts for the discrete channel.

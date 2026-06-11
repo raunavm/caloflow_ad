@@ -1,0 +1,17 @@
+E3 — cross-seed exchangeable merge vs per-seed mean (like-for-like, α=1e-3)
+==============================================================================
+
+    z  m(GeV)   gwr_occ persd_occ  gwr_comb persd_comb
+ 0.33   5.000      0.01      0.01     26.41      26.50
+ 0.66   5.000      0.00      0.00     16.51      18.19
+ 1.08   5.000      0.01      0.01     13.04       5.05
+ 1.16   5.000      2.19      2.19     10.15       8.63
+ 1.24   5.000     10.47     10.47     16.95      21.08
+ 1.24   0.500     10.53     10.53     14.71      20.69
+ 1.24   0.050     10.58     10.58     14.75      20.74
+ 1.24   0.005     10.51     10.51     14.67      20.72
+
+All SIC at the SAME α=1e-3 matched operating point (fair comparison).
+gwr_*   = GWR exchangeable merge (arithmetic mean of per-seed p), the single cross-seed detector.
+persd_* = mean over the 3 single-seed detectors at α=1e-3 (the N=3 ± std view being replaced).
+The merged detector carries ONE calibrated operating point; persd carries a per-seed distribution.

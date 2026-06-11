@@ -1,0 +1,14 @@
+EXP-12: T_shell_II promotion flips 5 cells out of 28
+  Headline cells (z=1.16, z=1.24, all masses) UNCHANGED: occ/raw/L/comb stay dominant.
+  Flips concentrate in the SUB-RESOLUTION regime: cells where the daughter-photon
+    opening angle Delta_x_kin < calorimeter pixel size (Delta_x_resolve ~ 7.74 cm).
+    At these cells T_S sees no morphology shift (output looks photon-like), but the
+    Flow-II latent is atypical: ||z_II||^2 shifts upward by ~10-20% of d_II = 504.
+
+Why we keep T_shell_II in the 5-channel ablation but NOT in the primary 4-channel headline:
+  1. Adding shell to the nested p_comb HURTS in 24/28 cells (Tippett multiple-test cost).
+  2. The physical mechanism (latent atypicality) is interpretable but not as crisp as
+     the (layer-aggregate, morphology, late-start) story of the 4-channel set.
+  3. The flips happen in cells where 'morphology' would NOT have been the operative
+     mechanism anyway (signal is sub-resolution); promoting shell would re-label them
+     as 'latent' which is less informative for a physics audience.

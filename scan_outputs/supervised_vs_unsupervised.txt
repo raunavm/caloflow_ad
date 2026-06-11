@@ -1,0 +1,39 @@
+==================================================================================================================================
+Figure 6.4 — supervised baseline (upper-bound sanity check) vs unsupervised channels
+==================================================================================================================================
+
+Setup: MLP [504, 256, 128, 64, 1] with BatchNorm+ReLU+Dropout(0.2). AdamW lr=1e-3.
+Train: 80% (80k bg + 80k sig). Test: 20% (20k bg + 20k sig). seed=42. 15 epochs, A40 GPU.
+Theoretical SIC ceiling at α=1e-3 with continuous score and ε_B = α: 1/√α ≈ 31.62.
+
+        regime    cell (z, m_χ)     SUP AUC   SUP SIC@1e-2   SUP SIC@1e-3  best unsup  unsup SIC  unsup/sup
+----------------------------------------------------------------------------------------------------------------------------------
+    morphology  z=0.33 m=5        0.9999           9.98          31.52      p_comb      31.36       0.99
+   combination  z=1.16 m=5        0.9999          10.00          31.59      p_comb      13.07       0.41
+     occupancy  z=1.24 m=5        1.0000          10.00          31.62       T_occ      40.70       1.29
+----------------------------------------------------------------------------------------------------------------------------------
+
+Per-channel unsupervised SICs at α=1e-3 (for §6.4 narrative):
+        regime   T_raw     T_I     T_S   T_occ   p_comb   SUP_1e-3
+    morphology   26.97    0.04   30.05    0.02    31.36      31.52
+   combination    8.38   10.30    5.29    8.54    13.07      31.59
+     occupancy    6.22   22.22    3.28   40.70    29.90      31.62
+
+Interpretation (per user §6.4 paragraph spec):
+  - Supervised AUC ≈ 1 in all 3 cells → 504-dim voxel input contains essentially complete
+    discrimination information for these signals.
+  - Supervised SIC saturates at the theoretical 1/√α ceiling (≈ 31.62 at α=1e-3) since
+    the continuous classifier score gives ε_B = α exactly.
+  - Unsupervised performance vs supervised, per regime:
+      morphology   (z=0.33):  T_S=30.05 vs sup=31.52 → 95% of supervised, achieves
+                              comparable SIC without signal labels
+      combination  (z=1.16):  p_comb=13.07 vs sup=31.59 → 41% of supervised; the
+                              combination is bounded by Tippett multiple-testing penalty
+      occupancy    (z=1.24):  T_occ=40.70 vs sup=31.62 → 129% of supervised; T_occ's
+                              discrete achievability floor (ε_B < α) lets it exceed the
+                              nominal-α SIC ceiling
+
+Paper claim: supervised provides strong discrimination when the signal hypothesis is known.
+Our method is background-only, requires no signal labels, and provides mechanism attribution
+via calibrated per-channel p-values. In the occupancy regime the unsupervised method exceeds
+the nominal-α supervised ceiling via discrete-score achievability.

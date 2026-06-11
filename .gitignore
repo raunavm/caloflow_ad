@@ -1,46 +1,4 @@
-# Data, models, figures — large or generated, not checked in
-data/
-models/
-results/
-figures/
-
-# Upstream repos cloned at top level (independent clones, not submodules)
-caloflow/
-AD_with_CF/
-
-# Internal docs, plans, Claude skills — never push to the public GitHub repo.
-# The public repo carries code (src/, scripts/, tests/, cluster/, configs/) and
-# environment.yml only. Everything else is local working context.
-*.md
-.claude/
-plans/
-docs/
-
-# (If you ever want a public README on GitHub, create one and add an exception:
-#   !README.md   above the `*.md` line, or just `git add -f README.md`.)
-
-# Python
 __pycache__/
-*.py[cod]
-*$py.class
-*.egg-info/
-.pytest_cache/
-.ruff_cache/
-.mypy_cache/
-
-# uv / venv
-.venv/
-.uv/
-uv.lock
-
-# OS / editor
+*.pyc
 .DS_Store
-.idea/
-.vscode/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# SLURM logs
-slurm-*.out
-*.err
+figures/out/

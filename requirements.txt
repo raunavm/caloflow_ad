@@ -1,0 +1,16 @@
+# pip fallback for the conda environment in environment.yml (Python 3.9).
+#
+# The figure / table / Tier-1-analysis layer (figures.py, tables.py, analysis.py)
+# needs only the lightweight scientific stack:
+numpy
+pandas
+scipy
+matplotlib
+scikit-learn
+h5py
+#
+# torch + nflows are required only by the Tier-2 provenance scripts in pipeline/
+# (the GPU/cluster scans that produced the committed scan_outputs/ tables); they
+# are NOT needed to regenerate any figure or table on a laptop.
+torch
+nflows

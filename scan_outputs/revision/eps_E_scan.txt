@@ -1,0 +1,6 @@
+  eps_E (keV)              neg_91_5GeV              neg_8_5GeV               zero_5GeV   T-set eps_B^occ
+
+Robustness verdict:
+  eps_E = 0.1 keV: max relative drift from eps_E=0 = 0.0%, mean = 0.0%
+  eps_E = 1.0 keV: max relative drift from eps_E=0 = 0.3%, mean = 0.1%
+  eps_E = 10.0 keV: max relative drift from eps_E=0 = 4.5%, mean = 2.5%

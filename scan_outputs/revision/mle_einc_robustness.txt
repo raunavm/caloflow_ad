@@ -1,0 +1,12 @@
+EXP-14: E_inc estimator robustness (MLE proxy via empirical sampling fraction)
+  A: E_dep / 0.937 (default)
+  B: E_dep / 93699.0547 (data-driven constant, C0 median)
+  C: per-bin median sampling fraction (C0)
+  D: oracle E_inc_true
+
+Per-bin slopes:
+  b0: 93699.054688
+  b1: 93699.054688
+  b2: 93699.054688
+  b3: 93699.054688
+  b4: 93699.054688

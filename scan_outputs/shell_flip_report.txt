@@ -1,0 +1,32 @@
+T_shell ablation report — 28 cells, 7 dominant-channel flips after adding shell
+d_I = 3, d_II = 504
+
+Per-cell dominant channel before/after adding shell:
+  [FLIP]  z=0.33  m=5.000  dom4=       S  dom6=   mixed  shellI=  0.033  shellII=  31.564  best_phys= 30.051
+  [FLIP]  z=0.66  m=5.000  dom4=       S  dom6=   mixed  shellI=  0.023  shellII=  31.389  best_phys= 22.405
+  [FLIP]  z=1.00  m=5.000  dom4=    none  dom6= shellII  shellI=  0.024  shellII=  16.720  best_phys=  0.049
+  [FLIP]  z=1.04  m=5.000  dom4=    none  dom6= shellII  shellI=  0.001  shellII=  14.963  best_phys=  0.569
+  [FLIP]  z=1.08  m=5.000  dom4=       S  dom6=   mixed  shellI=  0.119  shellII=  12.251  best_phys=  8.678
+  [    ]  z=1.16  m=5.000  dom4=   mixed  dom6=   mixed  shellI= 10.022  shellII=   9.475  best_phys= 10.297
+  [    ]  z=1.24  m=5.000  dom4=     occ  dom6=     occ  shellI= 20.841  shellII=   7.171  best_phys= 40.701
+  [FLIP]  z=0.33  m=0.500  dom4=    none  dom6= shellII  shellI=  0.020  shellII=   8.384  best_phys=  0.043
+  [FLIP]  z=0.66  m=0.500  dom4=    none  dom6= shellII  shellI=  0.019  shellII=   2.839  best_phys=  0.024
+  [    ]  z=1.00  m=0.500  dom4=    none  dom6=    none  shellI=  0.014  shellII=   0.037  best_phys=  0.023
+  [    ]  z=1.04  m=0.500  dom4=    none  dom6=    none  shellI=  0.002  shellII=   0.040  best_phys=  0.039
+  [    ]  z=1.08  m=0.500  dom4=    none  dom6=    none  shellI=  0.139  shellII=   0.067  best_phys=  0.576
+  [    ]  z=1.16  m=0.500  dom4=   mixed  dom6=   mixed  shellI= 10.236  shellII=   0.131  best_phys= 10.524
+  [    ]  z=1.24  m=0.500  dom4=     occ  dom6=     occ  shellI= 20.793  shellII=   0.231  best_phys= 40.954
+  [    ]  z=0.33  m=0.050  dom4=    none  dom6=    none  shellI=  0.018  shellII=   0.029  best_phys=  0.022
+  [    ]  z=0.66  m=0.050  dom4=    none  dom6=    none  shellI=  0.023  shellII=   0.027  best_phys=  0.031
+  [    ]  z=1.00  m=0.050  dom4=    none  dom6=    none  shellI=  0.021  shellII=   0.025  best_phys=  0.028
+  [    ]  z=1.04  m=0.050  dom4=    none  dom6=    none  shellI=  0.002  shellII=   0.029  best_phys=  0.042
+  [    ]  z=1.08  m=0.050  dom4=    none  dom6=    none  shellI=  0.152  shellII=   0.041  best_phys=  0.507
+  [    ]  z=1.16  m=0.050  dom4=   mixed  dom6=   mixed  shellI= 10.206  shellII=   0.098  best_phys= 10.481
+  [    ]  z=1.24  m=0.050  dom4=     occ  dom6=     occ  shellI= 20.811  shellII=   0.189  best_phys= 41.148
+  [    ]  z=0.33  m=0.005  dom4=    none  dom6=    none  shellI=  0.018  shellII=   0.030  best_phys=  0.025
+  [    ]  z=0.66  m=0.005  dom4=    none  dom6=    none  shellI=  0.018  shellII=   0.025  best_phys=  0.025
+  [    ]  z=1.00  m=0.005  dom4=    none  dom6=    none  shellI=  0.018  shellII=   0.028  best_phys=  0.024
+  [    ]  z=1.04  m=0.005  dom4=    none  dom6=    none  shellI=  0.003  shellII=   0.028  best_phys=  0.041
+  [    ]  z=1.08  m=0.005  dom4=    none  dom6=    none  shellI=  0.136  shellII=   0.049  best_phys=  0.530
+  [    ]  z=1.16  m=0.005  dom4=   mixed  dom6=   mixed  shellI= 10.228  shellII=   0.093  best_phys= 10.515
+  [    ]  z=1.24  m=0.005  dom4=     occ  dom6=     occ  shellI= 20.819  shellII=   0.209  best_phys= 40.898

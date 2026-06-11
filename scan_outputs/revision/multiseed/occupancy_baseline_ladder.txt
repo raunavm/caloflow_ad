@@ -1,0 +1,36 @@
+Occupancy baseline ladder (seed_001; α = 1e-3)
+========================================================================================
+cell                                     (a)O0cut  (b)E0frac    (c)3var    (d)Tocc    (e)comb
+  eval_signal_neg_91_5GeV                    0.00       0.01       0.00       0.02      27.56
+  eval_signal_neg_58_5GeV                    0.00       0.00       0.00       0.01      17.98
+  eval_signal_neg_24_5GeV                    0.00       0.00       0.00       0.01       0.04
+  eval_signal_neg_20_5GeV                    0.00       0.01       0.00       0.00       0.08
+  eval_signal_neg_16_5GeV                    0.02       0.56       0.03       0.04       1.00
+  eval_signal_neg_8_5GeV                     4.59      20.03       5.56       8.27      11.49
+  eval_signal_zero_5GeV                     21.92      30.35      21.32      39.41      26.54
+  eval_signal_neg_91_0.5GeV                  0.00       0.00       0.00       0.01       0.03
+  eval_signal_neg_58_0.5GeV                  0.00       0.00       0.00       0.01       0.03
+  eval_signal_neg_24_0.5GeV                  0.00       0.00       0.00       0.01       0.02
+  eval_signal_neg_20_0.5GeV                  0.00       0.01       0.00       0.00       0.01
+  eval_signal_neg_16_0.5GeV                  0.03       0.67       0.03       0.05       0.26
+  eval_signal_neg_8_0.5GeV                   4.71      20.27       5.68       8.49      11.51
+  eval_signal_zero_0.5GeV                   22.05      30.43      21.47      39.66      26.52
+  eval_signal_neg_91_0.05GeV                 0.00       0.00       0.00       0.01       0.02
+  eval_signal_neg_58_0.05GeV                 0.00       0.00       0.00       0.01       0.03
+  eval_signal_neg_24_0.05GeV                 0.00       0.00       0.00       0.01       0.03
+  eval_signal_neg_20_0.05GeV                 0.00       0.01       0.00       0.00       0.02
+  eval_signal_neg_16_0.05GeV                 0.03       0.68       0.04       0.06       0.27
+  eval_signal_neg_8_0.05GeV                  4.62      20.34       5.70       8.32      11.45
+  eval_signal_zero_0.05GeV                  22.15      30.47      21.60      39.84      26.52
+  eval_signal_neg_91_low                     0.00       0.00       0.00       0.01       0.02
+  eval_signal_neg_58_low                     0.00       0.00       0.00       0.00       0.03
+  eval_signal_neg_24_low                     0.00       0.00       0.00       0.01       0.02
+  eval_signal_neg_20_low                     0.00       0.01       0.00       0.00       0.02
+  eval_signal_neg_16_low                     0.02       0.65       0.02       0.04       0.26
+  eval_signal_neg_8_low                      4.71      20.27       5.68       8.48      11.49
+  eval_signal_zero_low                      22.01      30.47      21.48      39.60      26.57
+
+Headline cells:
+  eval_signal_neg_91_5GeV               (a)=   0.00  (e)=  27.56  ratio (e)/(a) = 27564.00×
+  eval_signal_neg_8_5GeV                (a)=   4.59  (e)=  11.49  ratio (e)/(a) =   2.50×
+  eval_signal_zero_5GeV                 (a)=  21.92  (e)=  26.54  ratio (e)/(a) =   1.21×

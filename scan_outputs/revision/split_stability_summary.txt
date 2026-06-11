@@ -1,0 +1,15 @@
+EXP-5: calibration-split stability across 20 random splits
+  C0 fixed at seed 42; (C1,C2,T) repermuted at seeds 1..20
+  alpha = 0.001
+
+  Per-cell label-flip rates (% of random splits where dom != dom@42):
+    eval_signal_neg_91_5GeV          z=0.33 m=5  dom@42=S flip=85%
+    eval_signal_neg_8_5GeV           z=1.16 m=5  dom@42=raw flip=80%
+    eval_signal_neg_58_0.5GeV        z=0.66 m=0.5  dom@42=comb flip=80%
+    eval_signal_neg_58_5GeV          z=0.66 m=5  dom@42=S flip=75%
+    eval_signal_neg_24_5GeV          z=1.00 m=5  dom@42=S flip=55%
+    eval_signal_neg_20_0.5GeV        z=1.04 m=0.5  dom@42=S flip=55%
+    eval_signal_neg_8_0.5GeV         z=1.16 m=0.5  dom@42=comb flip=55%
+    eval_signal_neg_8_0.05GeV        z=1.16 m=0.05  dom@42=comb flip=55%
+    eval_signal_neg_8_low            z=1.16 m=0.005  dom@42=comb flip=55%
+    eval_signal_neg_20_5GeV          z=1.04 m=5  dom@42=S flip=50%

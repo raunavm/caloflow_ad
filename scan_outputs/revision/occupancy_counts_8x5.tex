@@ -1,0 +1,16 @@
+\begin{table}[h]
+\centering
+\caption{Per-bin per-pattern background occupancy counts on the C0 fold ($N_{C0}=20\,000$). Patterns encode $(\mathbb{1}[E_0>0],\mathbb{1}[E_1>0],\mathbb{1}[E_2>0])$ as bits; e.g.\ \texttt{011} = $\{E_0=0, E_1>0, E_2>0\}$, the late-start signature. Cells with raw count $\le 5$ are dominated by the Laplace $\alpha=1$ prior in $\hat p_\gamma(O\mid b)$.}
+\label{tab:occupancy_counts}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Bin & \texttt{000} & \texttt{001} & \texttt{010} & \texttt{011} & \texttt{100} & \texttt{101} & \texttt{110} & \texttt{111} & Total \\
+\midrule
+$b_0$ & 0 & 0 & 0 & 4 & 0 & 0 & 1068 & 2993 & 4065 \\
+$b_1$ & 0 & 0 & 0 & 0 & 0 & 0 & 25 & 3993 & 4018 \\
+$b_2$ & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 3993 & 3994 \\
+$b_3$ & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 3974 & 3975 \\
+$b_4$ & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3948 & 3948 \\
+\bottomrule
+\end{tabular}
+\end{table}

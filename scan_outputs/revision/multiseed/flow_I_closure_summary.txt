@@ -1,0 +1,9 @@
+Flow-I closure aggregation summary
+============================================================
+
+  seed_001:  AUC = 1.0000   [FAIL]
+  seed_002:  AUC = 1.0000   [FAIL]
+  seed_003:  AUC = 1.0000   [FAIL]
+
+Verdict: VERIFIED_RECIPE_PATHOLOGY
+Manuscript action: All 3 seeds fail closure (AUC ~1.0), and a head-to-head diagnostic against caloflow's published sample_rec_flow() confirms the failure mode is reproduced by the upstream sampler (max per-feature mean diff < 0.5).  This is a verified property of the CaloFlow Flow-I training recipe (documented latent norm ||z_I||^2 ~ 159 vs expected 3), NOT a methodology flaw of our anomaly detection.  The conformal anomaly-detection pipeline uses per-event log_prob rankings against C1, not generative samples; channel-level SIC values are unaffected.  §VI.E rewrites with the honest reframe rather than halting.

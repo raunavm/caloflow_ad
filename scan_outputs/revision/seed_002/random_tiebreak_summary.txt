@@ -1,0 +1,29 @@
+Random vs conservative tie-breaking across 28 cells
+  raw label-flip rate (dominant channel): 11/28 = 39.3%
+
+  Decomposing the flips:
+    dead-zone (top SIC < 1.0, dominant channel is noise):   3/28
+    tie-noise (top - runner-up < 1.0, swap is statistical):  4/28
+    SIGNIFICANT (real change in mechanism story):              4/28
+
+  Significant flips (real mechanism changes):
+    eval_signal_zero_5GeV            z=1.24 m=5  occ -> comb
+      cons: raw=19.22  L=23.11  S=13.66  occ=39.41  comb=26.97
+      rand: raw=19.44  L=22.73  S=13.39  occ=15.48  comb=24.83
+    eval_signal_zero_0.5GeV          z=1.24 m=0.5  occ -> comb
+      cons: raw=1.08  L=23.23  S=0.43  occ=39.66  comb=26.50
+      rand: raw=1.15  L=22.86  S=0.44  occ=15.57  comb=24.07
+    eval_signal_zero_0.05GeV         z=1.24 m=0.05  occ -> comb
+      cons: raw=0.93  L=23.31  S=0.36  occ=39.84  comb=26.59
+      rand: raw=0.97  L=22.93  S=0.37  occ=15.64  comb=24.14
+    eval_signal_zero_low             z=1.24 m=0.005  occ -> comb
+      cons: raw=0.94  L=23.28  S=0.37  occ=39.60  comb=26.58
+      rand: raw=1.00  L=22.91  S=0.39  occ=15.55  comb=24.13
+
+Interpretation:
+  Random tie-breaking removes T_occ's discrete-floor effect: under the
+  conservative >= convention many T_occ ties stack at the high-rank end,
+  which sharpens the achievable eps_B downward. Randomization spreads
+  these uniformly, so T_occ operates closer to its nominal eps_B = alpha.
+  The MATCHED-eps_B comparison (EXP-6) is unaffected; only the SIC AT
+  nominal alpha = 1e-3 shifts for the discrete channel.

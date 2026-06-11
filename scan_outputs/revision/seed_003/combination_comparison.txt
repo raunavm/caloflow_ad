@@ -1,0 +1,9 @@
+EXP-11: combination scheme comparison
+  Tippett: nested-conformal min(p_i), Bates 2023 §3
+  E-value: Vovk-Wang 2021 (1/mean(1/p_i))
+  Cauchy:  Liu-Xie 2020 (atan-based)
+  alpha = 0.001
+
+  Dominant-channel flips vs Tippett at 28 cells:
+    E-value: 9/28
+    Cauchy:  5/28
